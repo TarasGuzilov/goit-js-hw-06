@@ -8,25 +8,17 @@ const ingredients = [
 ];
 
 
-// const ingredientsItem = document.createElement('li');
-// console.log(ingredientsItem);
+const ingredientsRef = document.querySelector('#ingredients');
 
-ingredients.forEach((item) => {
+
+const ingredientsItems = ingredients.map(ingredient => {
   const ingredientsItemRef = document.createElement('li');
-  // console.log(ingredientsItemRef);
-  ingredientsItemRef.textContent = item;
+
+  ingredientsItemRef.textContent = ingredient;
   ingredientsItemRef.classList.add('ingredients__item');
-  console.log(ingredientsItemRef);
 
-})
+  return ingredientsItemRef;
+});
 
-// В HTML есть пустой список ul#ingredients.
 
-// <ul id="ingredients"></ul>
-
-// Напиши скрипт, который для каждого элемента массива ingredients:
-
-// Создаст отдельный элемент <li>. Обзательно используй метод document.createElement().
-// Добавит название ингредиента как его текстовое содержимое.
-// Добавит элементу класс item.
-// После чего вставит все <li> за одну операцию в список ul.ingredients.
+ingredientsRef.append(...ingredientsItems);
