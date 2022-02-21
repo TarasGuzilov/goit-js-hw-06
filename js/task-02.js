@@ -13,7 +13,11 @@ const ingredients = [
 
 ingredients.forEach((item) => {
   const ingredientsItemRef = document.createElement('li');
+  // console.log(ingredientsItemRef);
+  ingredientsItemRef.textContent = item;
+  ingredientsItemRef.classList.add('ingredients__item');
   console.log(ingredientsItemRef);
+
 })
 
 // В HTML есть пустой список ul#ingredients.
