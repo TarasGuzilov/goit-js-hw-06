@@ -10,7 +10,9 @@ const ingredients = [
 
 
 
+// В HTML есть пустой список ul#ingredients.
 
+// <ul id="ingredients"></ul>
 
 // Напиши скрипт, который для каждого элемента массива ingredients:
 
