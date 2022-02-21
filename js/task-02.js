@@ -8,7 +8,13 @@ const ingredients = [
 ];
 
 
+// const ingredientsItem = document.createElement('li');
+// console.log(ingredientsItem);
 
+ingredients.forEach((item) => {
+  const ingredientsItemRef = document.createElement('li');
+  console.log(ingredientsItemRef);
+})
 
 // В HTML есть пустой список ul#ingredients.
 
