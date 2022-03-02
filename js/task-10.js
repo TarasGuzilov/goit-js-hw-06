@@ -10,22 +10,82 @@ const btnDestroy = document.querySelector('button[data-destroy]');
 
 
 const firstBoxSize = 30
-const newBoxes = [];
+let newBoxes = [];
 
 btnCreate.addEventListener('click', () => {
   createBoxes(inputRef.value)
 });
 
 btnDestroy.addEventListener('click', () => {
-  const array = boxesRef.querySelectorAll('div');
-  array.forEach(element => {
-    element.remove();
+
+  newBoxes = [];
+  boxesRef.innerHTML = '';
+
+  // ** Неживая коллекция **
+
+  // const array = boxesRef.querySelectorAll('div');
+  // console.log(array)
+  // array.forEach(element => {
+  //   element.remove();
+  // });
+
+  // console.log(array);
+
+  // console.log(boxesRef.children);
+  // console.log(boxesRef.querySelectorAll('div'));
+
+
+  // ** Неживая коллекция **
+
+  // boxesRef.querySelectorAll('div').forEach(element => {
+  //   element.remove();
+  // });
   
-  });
+  // console.log(boxesRef.children);
+  // console.log(boxesRef.querySelectorAll('div'));
+
+
+
+  // ** Живая коллекция **
+
+  // const array = boxesRef.children;
+  // console.log(array)
+  // for (const element of array) {
+  //   console.log(element);
+  //   element.remove();
+  // };
+  // console.log(array)
+
+  // console.log(boxesRef.children);
+  // console.log(boxesRef.querySelectorAll('div'));
+
+
+  // ** Живая коллекция **
+
+  // console.log(boxesRef);
+
+  // while (boxesRef.firstChild) {
+  //   console.log(boxesRef.firstChild);
+  // boxesRef.removeChild(boxesRef.firstChild);
+  // }
+
+  // console.log(boxesRef.children);
+  // console.log(boxesRef.querySelectorAll('div'));
   
-  // boxesRef.textContent = '';
+  
+
+
+  
+
+  // boxesRef.innerHTML = '';
 });
 
+
+// var div_list = document.querySelectorAll('div'); // returns NodeList
+// var div_array = Array.prototype.slice.call(div_list)
+
+
+// ** Добавление через "append" **
 
 function createBoxes(amount) {
   for (let i = 0; i < amount; i += 1) {
@@ -33,12 +93,35 @@ function createBoxes(amount) {
     element.style.width = `${firstBoxSize + i * 10}px`;
     element.style.height = `${firstBoxSize + i * 10}px`;
     element.style.backgroundColor = getRandomHexColor();
+
     newBoxes.push(element);
   }
-  
+ 
   boxesRef.append(...newBoxes);
-  
 }
+
+
+// ** Добавление через "innerHTML" **
+
+// function createBoxes(amount) {
+//   for (let i = 0; i < amount; i += 1) {
+//     const element = document.createElement('div');
+//     element.style.width = `${firstBoxSize + i * 10}px`;
+//     element.style.height = `${firstBoxSize + i * 10}px`;
+//     element.style.backgroundColor = getRandomHexColor();
+
+//     newBoxes.push(element);
+//   }
+
+//   let markup = "";
+//   newBoxes.forEach(element => {
+//     markup += element.outerHTML
+//   });
+
+//   boxesRef.innerHTML = markup;
+// }
+
+
 
 
 /* <body>
